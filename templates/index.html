@@ -1,0 +1,217 @@
+{%extends 'base.html' %}
+
+{% block body %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div style="color: lightgreen; text-align:center; margin: 10px;">
+      {% for msg in messages %}
+        <p>{{ msg }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<div id="header">
+        <div class="container">
+            <nav>
+                <img src="{{ url_for('static',filename='images/photo 2.jpg')}}" alt="My photo" class="logo">
+                <ul id="sidemenu">
+                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Full Stack Developer</p>
+                <h1>Hi, I'm <span>Vignesh</span><br></h1>
+            </div>
+        </div>
+    </div>
+<!-- ----------about------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="{{ url_for('static',filename='images/About.jpg') }}">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Software Engineer specialized in Java,Python, SQL, Web Development, and AWS Cloud. 
+                    Experienced in building and deploying scalable applications with a focus on performance, reliability, and real-world problem solving.
+                    </p>
+                
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills',event)">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education', event)">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            
+                            <li><span>Java</span><br>Object Oriented Programming, Backend Development</li>
+                            <li><span>Web Development</span><br>HTML, CSS, JavaScript</li>
+                            <li><span>AWS Cloud</span><br>EC2, S3, IAM, Cloud Deployment</li>
+                            <li><span>SQL</span><br>MySQL, Writing Queries, Data Analysis</li>
+                            <li><span>Tools</span><br>Git, GitHub, VS Code, IntelliJ Idea</li>
+                            <li><span>OS</span><br>Windows ,Linux-Ubuntu</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023-Current</span><br>Software Engineer at Cognizant Technology Solutions</li>
+                            <li>Resolved production incidents with 100% SLA compliance, ensuring high system availability.</li>
+
+                            <li>Performed application monitoring and health checks using Dynatrace.</li>
+
+                            <li>Managed and analyzed incident tickets using structured troubleshooting and root cause analysis.</li>
+
+                            <li>Built dashboards in ServiceNow, Power BI, and Excel to track incidents and SLA performance.</li>
+
+                            <li>Maintained SOPs and Known Error Database (KEDB) to improve resolution efficiency.</li>
+
+                            <li>Collaborated with cross-functional teams and supported automation of repetitive issues.</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2023</span><br>B.tech</li>
+                            <li><span>2019</span><br>12th standard</li>
+                            <li><span>2017</span><br>10th standard</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- --------------services-------------- -->
+  
+<div id="services">
+        <div class="container">
+            <h1 class ="sub-title">My Services</h1>
+            <div class="services-list">
+
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Full Stack Web Development</h2>
+                    <p>
+                    I build complete web applications using Python (Flask), HTML, CSS, and JavaScript with database integration using SQLite/MySQL. 
+                    My projects include backend logic, REST APIs, and dynamic frontend interactions.
+                    </p>
+                    <a href="#">Learn more</a>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-server"></i>
+                        <h2>Backend & API Development</h2>
+                        <p>
+                    I design and develop server-side logic and REST APIs to handle data processing, storage, and communication between frontend and backend systems.
+                    </p>
+                        <a href="#">Learn more</a>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-database"></i>
+                        <h2>Database & Automation</h2>
+                        <p>
+                    I work with SQL databases to design schemas, store and manage data efficiently, and build automation scripts to improve workflows and reduce manual effort.
+                    </p>
+                        <a href="#">Learn more</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- ----------------portfolio------- -->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="{{url_for('static',filename='images/1.png')}}" alt="">
+                <div class="layer">
+                    <h3>Full Stack Portfolio & Contact Management System</h3>
+                    <p>
+                    Developed a full-stack web application using Flask and SQLite that allows users to submit messages through a contact form. 
+                    Implemented a secure admin dashboard with authentication to view and manage messages. 
+                    Built REST API endpoints and used JavaScript to dynamically fetch and display data.
+                    Technologies: Flask, SQLite, JavaScript, HTML, CSS
+                    </p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    </div>
+
+                    <div class="work">
+                        <img src="{{url_for('static',filename='images/2.png')}}" alt="">
+                        <div class="layer">
+                            <h3>Incident Tracking Dashboard</h3>
+                            <p>
+                    Created dashboards to monitor incident trends, SLA performance, and system health. 
+                    Focused on data analysis, visualization, and improving operational efficiency.
+                    Technologies: Excel, Power BI, ServiceNow
+                    </p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="work">
+                        <img src="{{url_for('static',filename='images/3.jpg')}}" alt="">
+                        <div class="layer">
+                            <h3>Automation Scripts for Operations</h3>
+                            <p>
+                    Developed scripts to automate repetitive tasks in incident management and monitoring workflows, 
+                    reducing manual effort and improving response time.
+                    Technologies: Python, Shell Scripting
+                    </p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+ </div>
+ <!-- --------------------contact--------------------- -->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact me </h1>
+                <p><i class="fa-regular fa-envelope"></i> vignesh123mv@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +91 7090284480</p>
+                <div class="social-media">
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="{{url_for('static',filename='images/3.0.pdf')}}" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form action="/contact" method="post">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your mail" required>
+                    <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright &copy; Vignesh</p>
+    </div>
+</div>
+{% endblock %}
